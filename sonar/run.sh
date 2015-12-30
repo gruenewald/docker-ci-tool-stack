@@ -11,5 +11,5 @@ exec java -jar lib/sonar-application-$SONAR_VERSION.jar \
   -Dsonar.jdbc.password="$SONARQUBE_JDBC_PASSWORD" \
   -Dsonar.jdbc.url="$SONARQUBE_JDBC_URL" \
   -Dsonar.web.javaAdditionalOpts="-Djava.security.egd=file:/dev/./urandom" \
-  -Dsonar.web.context="SONARQUBE_RELATIVE_URL_ROOT" \
+  -Dsonar.web.context="$SONARQUBE_RELATIVE_URL_ROOT" \
 	"$@"
