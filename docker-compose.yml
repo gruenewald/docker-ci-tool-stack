@@ -98,6 +98,8 @@ gitlab:
     - IMAP_PASS=password
     - IMAP_SSL=true
     - IMAP_STARTTLS=false
+    
+    - GITLAB_RELATIVE_URL_ROOT=/git
   volumes:
     - /srv/docker/gitlab/gitlab:/home/git/data
 redis:
