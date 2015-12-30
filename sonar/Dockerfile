@@ -18,11 +18,14 @@ EXPOSE 9000
 # H2 Database port
 EXPOSE 9092
 
-# Database configuration
+# Database
 # Defaults to using H2
 ENV SONARQUBE_JDBC_USERNAME sonar
 ENV SONARQUBE_JDBC_PASSWORD sonar
 ENV SONARQUBE_JDBC_URL jdbc:h2:tcp://localhost:9092/sonar
+
+# context-path
+ENV SONARQUBE_RELATIVE_URL_ROOT /sonar
 
 ENV SONAR_VERSION 5.1.2
 
@@ -41,7 +44,7 @@ RUN set -x \
 	&& gpg --verify sonarqube.zip.asc \
 	&& unzip sonarqube.zip \
 	&& mv sonarqube-$SONAR_VERSION sonarqube \
-  && rm sonarqube.zip* \
+    && rm sonarqube.zip* \
 	&& rm -rf $SONARQUBE_HOME/bin/*
 
 # Installing Plugins
