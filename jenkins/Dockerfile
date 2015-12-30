@@ -25,3 +25,6 @@ COPY config/maven-global-settings-files.xml /usr/share/jenkins/ref/maven-global-
 COPY config/credentials.xml /usr/share/jenkins/ref/credentials.xml
 COPY config/ssh-keys/cd-demo /usr/share/jenkins/ref/.ssh/id_rsa
 COPY config/ssh-keys/cd-demo.pub /usr/share/jenkins/ref/.ssh/id_rsa.pub
+
+# context-path
+ENV JENKINS_OPTS --prefix=/jenkins
