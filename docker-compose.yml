@@ -109,3 +109,8 @@ redis:
   image: sameersbn/redis:latest
   volumes:
     - /srv/docker/gitlab/redis:/var/lib/redis
+
+nginx:
+  build: ./nginx
+  ports:
+    - "443:443"
