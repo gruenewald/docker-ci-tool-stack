@@ -2,7 +2,7 @@ def giturl = 'https://github.com/tobiasflohre/movie-database'
 job("movie-database-1-ci") {
   parameters {
     stringParam("BRANCH", "master", "Define TAG or BRANCH to build from")
-    stringParam("REPOSITORY_URL", "http://\${DOCKERCITOOLSTACK_NEXUS_1_PORT_8081_TCP_ADDR}:\${DOCKERCITOOLSTACK_NEXUS_1_PORT_8081_TCP_PORT}/nexus/content/repositories/releases/", "Nexus Release Repository URL")
+    stringParam("REPOSITORY_URL", "http://nexus:8081/nexus/content/repositories/releases/", "Nexus Release Repository URL")
   }
   scm {
     git {

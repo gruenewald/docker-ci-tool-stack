@@ -58,7 +58,7 @@ postgresql:
   volumes:
     - /srv/docker/gitlab/postgresql:/var/lib/postgresql
 gitlab:
-  image: sameersbn/gitlab:8.0.3
+  image: sameersbn/gitlab:8.3.1
   links:
     - redis:redisio
     - postgresql:postgresql
@@ -115,3 +115,9 @@ nginx:
   ports:
     - "80:80"
     - "443:443"
+  links:
+    - jenkins:jenkins
+    - nexus:nexus
+    - gitlab:gitlab
+    - sonar:sonar
+    - selhub:hub

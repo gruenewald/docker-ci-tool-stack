@@ -1,0 +1,13 @@
+[Unit]
+Description=Docker CI Toolstack Container
+Documentation=https://blog.codecentric.de/en/2015/10/continuous-integration-platform-using-docker-container-jenkins-sonarqube-nexus-gitlab/
+Requires=docker.service
+After=docker.service
+
+[Service]
+Restart=no
+TimeoutStartSec=0
+ExecStart=/usr/local/bin/docker-compose -f /home/builder/ci/docker-compose.yml up --force-recreate
+
+[Install]
+WantedBy=multi-user.target

@@ -1,5 +1,21 @@
 FROM jenkins:1.625.3
 
+MAINTAINER Matthias Gruenewald <matthias@tmgonline.de>
+
+USER root
+
+# Note the new setup script name for Node.js v0.12
+RUN curl -sL https://deb.nodesource.com/setup_0.12 | sudo -E bash -
+
+# Install NodeJS with:
+RUN apt-get update && apt-get install -y nodejs
+
+# Install Bower and Grunt-CLI
+RUN npm install -g bower grunt-cli
+
+# drop back to the regular jenkins user
+USER jenkins
+
 COPY plugins.txt /var/jenkins_home/plugins.txt
 RUN /usr/local/bin/plugins.sh /var/jenkins_home/plugins.txt
 

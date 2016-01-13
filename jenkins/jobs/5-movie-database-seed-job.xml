@@ -50,7 +50,7 @@
 job(&quot;movie-database-1-ci&quot;) {
   parameters {
     stringParam(&quot;BRANCH&quot;, &quot;master&quot;, &quot;Define TAG or BRANCH to build from&quot;)
-    stringParam(&quot;REPOSITORY_URL&quot;, &quot;http://\${DOCKERCITOOLSTACK_NEXUS_1_PORT_8081_TCP_ADDR}:\${DOCKERCITOOLSTACK_NEXUS_1_PORT_8081_TCP_PORT}/nexus/content/repositories/releases/&quot;, &quot;Nexus Release Repository URL&quot;)
+    stringParam(&quot;REPOSITORY_URL&quot;, &quot;http://nexus:8081/nexus/content/repositories/releases/&quot;, &quot;Nexus Release Repository URL&quot;)
   }
   scm {
     git {
